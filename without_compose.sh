@@ -59,7 +59,7 @@ checkResult() {
   http_response=$(
     docker exec \
       frontend \
-      curl -s -o response.txt -w "%{http_code}" http://backend:8080/backend/api/v1/public/items
+      curl -s -o response.txt -w "%{http_code}" http://backend-service:8080/backend/api/v1/public/items
   )
 
   if [ "$http_response" != "200" ]; then
